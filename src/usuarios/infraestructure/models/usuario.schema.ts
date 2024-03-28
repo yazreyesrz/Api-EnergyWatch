@@ -13,6 +13,16 @@ const UsuarioSchema = new Schema(
     },
     correo: {
       type: String,
+      required: true,
+      unique: true,
+      // Validación con expresión regular para verificar el formato del correo electrónico
+      validate: {
+        validator: function (v: string) {
+          return /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(v);
+        },
+        message: (props: { value: any }) =>
+          `${props.value} no es un correo electrónico válido!`,
+      },
     },
     contrasena: {
       type: String,
@@ -25,6 +35,7 @@ const UsuarioSchema = new Schema(
   {
     timestamps: false,
     versionKey: false,
+    id: false,
   }
 );
 

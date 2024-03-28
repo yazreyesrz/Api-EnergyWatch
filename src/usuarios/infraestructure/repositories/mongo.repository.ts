@@ -20,7 +20,12 @@ export class MongoRepository implements UsuarioRepository {
     return usuario;
   }
   async registerUsuario(usuarioIn: UsuarioEntity): Promise<any | null> {
-    const usuario = await UsuarioModel.create(usuarioIn);
-    return usuario;
+    try {
+      const usuario = await UsuarioModel.create(usuarioIn);
+      return usuario;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
   }
 }

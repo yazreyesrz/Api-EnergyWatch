@@ -20,7 +20,7 @@ export class RegisterUsuarioUseCase {
     correo: string;
     contrasena: string;
   }) {
-    nombre = this.encryptationService.EncryptPassword(nombre);
+    contrasena = this.encryptationService.EncryptPassword(contrasena);
     const usuarioValue = new UsuarioValue({
       nombre,
       apellido,

@@ -16,7 +16,7 @@ export class MongoRepository implements EdificioRepository {
     return edificio;
   }
 
-  async registerEdificio(postreIn: EdificioEntity): Promise<any | null> {
+  async registerEdificio(edificioIn: EdificioEntity): Promise<any | null> {
     const edificio = await EdificioModel.create(edificioIn);
     return edificio;
   }

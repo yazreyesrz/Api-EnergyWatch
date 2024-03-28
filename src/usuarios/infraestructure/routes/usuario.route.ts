@@ -10,11 +10,11 @@ const mongoRepository = new MongoRepository();
 const usuarioUseCase = new UsuarioUseCase(mongoRepository, encryptService);
 const usuarioCtrl = new UsuarioController(usuarioUseCase);
 
-usuarioroute.post("/usuario", async (req, res) => {
+usuarioroute.post("/usuarios", async (req, res) => {
   await usuarioCtrl.createCtrl(req, res);
 });
 
-usuarioroute.get("/usuario", async (req, res) => {
+usuarioroute.get("/usuarios", async (req, res) => {
   await usuarioCtrl.findCtrl(req, res);
 });
 export default usuarioroute;
