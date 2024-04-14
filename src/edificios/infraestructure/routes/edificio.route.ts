@@ -17,7 +17,7 @@ edificioroute.get("/edificio", async (req, res) => {
   await edificioCtrl.findOneCtrl(req, res);
 });
 
-edificioroute.post("/edificio", async (req, res) => {
+edificioroute.post("/one", async (req, res) => {
   await edificioCtrl.createCtrl(req, res);
 });
 

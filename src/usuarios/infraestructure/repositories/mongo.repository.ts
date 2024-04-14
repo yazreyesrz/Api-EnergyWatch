@@ -2,8 +2,8 @@ import { UsuarioEntity } from "../../domain/usuario.entity";
 import { UsuarioRepository } from "../../domain/usuario.repository";
 import UsuarioModel from "../models/usuario.schema";
 export class MongoRepository implements UsuarioRepository {
-  async findByIdUsuario(uuid: string): Promise<any | null> {
-    const usuario = UsuarioModel.findOne({ uuid });
+  async findByIdUsuario(correo: string): Promise<any | null> {
+    const usuario = UsuarioModel.findOne({ correo });
     return usuario;
   }
   async deleteUsuario(uuid: string): Promise<any | null> {

@@ -10,9 +10,9 @@ app.use(express.json());
 
 const port = process.env.PORT ?? 1001;
 
-app.use(edificioroute);
+app.use("/edificios", edificioroute);
 
-app.use(route);
+app.use("/usuarios", route);
 
 db().then();
 app.listen(port, () => console.log("Servidor iniciado en el puerto " + port));

@@ -21,6 +21,7 @@ export class RegisterEdificioUseCase {
     const edificioCreated = await this.edificioRepository.registerEdificio(
       edificioValue
     );
+    return edificioCreated;
     //const ID = edificioCreated?.uuid || "7777";
     //this.broker.sendNotificacion(nombre, seccion, ubicacion, ID);
     //return edificioCreated;

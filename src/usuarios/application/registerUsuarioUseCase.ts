@@ -9,22 +9,16 @@ export class RegisterUsuarioUseCase {
 
   public async execute({
     nombre,
-    apellido,
-    edad,
     correo,
     contrasena,
   }: {
     nombre: string;
-    apellido: string;
-    edad: number;
     correo: string;
     contrasena: string;
   }) {
     contrasena = this.encryptationService.EncryptPassword(contrasena);
     const usuarioValue = new UsuarioValue({
       nombre,
-      apellido,
-      edad,
       correo,
       contrasena,
     });
