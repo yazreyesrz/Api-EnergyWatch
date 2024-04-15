@@ -9,11 +9,11 @@ const mongoRepository = new MongoRepository();
 const edificioUseCase = new EdificioUseCase(mongoRepository, broker);
 const edificioCtrl = new EdificioController(edificioUseCase);
 
-edificioroute.delete("/edificio", async (req, res) => {
+edificioroute.delete("/one", async (req, res) => {
   await edificioCtrl.deleteOneCtrl(req, res);
 });
 
-edificioroute.get("/edificio", async (req, res) => {
+edificioroute.get("/one/:edificio", async (req, res) => {
   await edificioCtrl.findOneCtrl(req, res);
 });
 
@@ -21,7 +21,7 @@ edificioroute.post("/one", async (req, res) => {
   await edificioCtrl.createCtrl(req, res);
 });
 
-edificioroute.delete("/edificio", async (req, res) => {
+edificioroute.delete("/one/:id", async (req, res) => {
   await edificioCtrl.deleteByIdCtrl(req, res);
 });
 
