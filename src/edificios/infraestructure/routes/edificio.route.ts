@@ -25,4 +25,8 @@ edificioroute.delete("/one/:id", async (req, res) => {
   await edificioCtrl.deleteByIdCtrl(req, res);
 });
 
+edificioroute.get("/all", async (req, res) => {
+  await edificioCtrl.getAllCtrl(req, res);
+});
+
 export default edificioroute;

@@ -7,12 +7,18 @@ export class EdificioController {
     this.findOneCtrl = this.findOneCtrl.bind(this);
     this.createCtrl = this.createCtrl.bind(this);
     this.deleteByIdCtrl = this.deleteByIdCtrl.bind(this);
+    this.getAllCtrl = this.getAllCtrl.bind(this);
   }
 
   public async findOneCtrl(req: Request, res: Response) {
     const uuid: string = (req.query.uuid as string) || "";
 
     const edificio = await this.EdificioUseCase.findByidEdificios.execute(uuid);
+    res.send({ edificio });
+  }
+
+  public async getAllCtrl(req: Request, res: Response) {
+    const edificio = await this.EdificioUseCase.getAllEdificio.execute();
     res.send({ edificio });
   }
 

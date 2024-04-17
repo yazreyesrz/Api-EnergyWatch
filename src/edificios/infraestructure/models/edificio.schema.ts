@@ -9,7 +9,7 @@ const EdificioSchema = new Schema(
       type: Number,
     },
     ubicacion: {
-      type: Number,
+      type: String,
     },
     uuid: {
       type: String,
