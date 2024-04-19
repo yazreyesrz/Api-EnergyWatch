@@ -4,7 +4,7 @@ import { TokenService } from "../../domain/services/jwt";
 
 export class JwtTokenService implements TokenService {
   private readonly secretKey = process.env.JWT_SECRET_KEY || "your_secret_key";
-  private readonly expiresIn = "1h"; // Puedes ajustar esto según tus necesidades
+  private readonly expiresIn = "5h"; // Puedes ajustar esto según tus necesidades
 
   generateToken(user: UsuarioEntity): string {
     return jwt.sign({ userId: user.uuid, email: user.correo }, this.secretKey, {

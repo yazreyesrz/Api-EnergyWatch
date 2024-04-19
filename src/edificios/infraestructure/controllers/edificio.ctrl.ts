@@ -11,8 +11,9 @@ export class EdificioController {
   }
 
   public async findOneCtrl(req: Request, res: Response) {
-    const uuid: string = (req.query.uuid as string) || "";
-
+    const uuid: string = req.params.edificio; // Utiliza req.params para obtener el parámetro de la URL
+    console.log(uuid);
+    console.log(req.params);
     const edificio = await this.EdificioUseCase.findByidEdificios.execute(uuid);
     res.send({ edificio });
   }
